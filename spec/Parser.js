@@ -2,13 +2,13 @@ function Parser(input) {
   this.input = input;
   this.recursionSolver = new RecursionSolver();
   this.parseSuccess = true;
-  this.p = 0;
+  this.position = 0;
 }
 
 Parser.prototype.accept = function(substring) {
   var result;
-  if(substring === this.input.substr(this.p, substring.length)){
-    this.p += substring.length;
+  if(substring === this.input.substr(this.position, substring.length)){
+    this.position += substring.length;
     result = substring;
   } else {
     this.parseSuccess = false;

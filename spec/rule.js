@@ -1,6 +1,7 @@
 function rule(rule) {
   return function() {
-    return this.recursionSolver.solve("rule", this, rule, [], this);
+    var key = "rule" + this.position + (this.parseSuccess ? "t" : "f");
+    return this.recursionSolver.solve(key, this, rule, [], this);
   };
   
 }
